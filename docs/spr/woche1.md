@@ -40,7 +40,7 @@ int* x = malloc(sizeof(int));
 ```
 
 :::warning[Achtung]
-Die Funktion `malloc` kann, falls ein Fehler bei der Allozierung aufgetreten ist (bspw., falls kein Speicher mehr zur Verfügung steht) `NULL` zurückgeben. Für unsere Beispiele lassen wir diese Überprüfung oft weg. In der realen Welt sollte jedoch der Rückgabewert validiert werden, bevor an diese Adresse geschrieben wird - ungültige Lese-/Schreibzugriffe können zu Programmabstürzen führen!
+Die Funktion `malloc` kann, falls ein Fehler bei der Allozierung aufgetreten ist (bspw., falls kein Speicher mehr zur Verfügung steht) `NULL` zurückgeben. Für unsere Beispiele lassen wir diese Überprüfung oft weg. In der realen Welt, sowie in den Praxis-Aufgaben dieses Moduls, sollte jedoch der Rückgabewert validiert werden, bevor diese Adresse genutzt wird - ungültige Lese-/Schreibzugriffe können zu Programmabstürzen führen!
 :::
 
 Für weiterführende Informationen empfehle ich [diese YouTube Playlist](https://youtube.com/playlist?list=PL5FRnzOULdYfzyeoaKFJmfeHJvwIwqK0a&si=wGKf1cjvFOyQ34BK).
@@ -183,11 +183,12 @@ int main() {
 ## Parallelisierung
 Die Parallelisierung ist eine wichtige Methode um Programmausführungen effizienter absolvieren zu können. Allerdings können wir immer alle Prozesse simultan ausführen, da eventuell weitere Abhängigkeiten zwischen den Prozessen existiert. Abhängigkeitsgraphen sind eine Möglichkeit diese Abhängigkeiten visualisieren zu können.
 
-### Unterschied
+### Parbegin/Parend vs. Fork/Join
 `parbegin/parend` gruppiert Prozesse in Blöcke für simultane Ausführung und erfordert deren gemeinsames Ende, bevor fortgefahren werden kann, was eine blockweise Parallelität schafft. `fork/join` erlaubt individuelles Starten und Warten auf einzelne Prozesse zu beliebigen Zeitpunkten, was eine feingranulare und dynamische Parallelisierung ermöglicht. Wie wir im folgenden Beispiel sehen werden können unter Verwendung von `parbegin/parend` Informationen verloren gehen, wohingegen `fork/join` diese komplexeren Abhängigkeiten weiterhin enthält. 
 
-### Beispiel
+---
 
+#### Beispiel
 
 Als Beispiel ist der folgende Graph gegeben:
 
