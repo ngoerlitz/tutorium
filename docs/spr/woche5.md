@@ -115,4 +115,4 @@ Die Seitentabelle enthält, zusätzlich zur Kachelnummer, weitere Metadaten (Sta
 - Modifikationsbit (M) oder Dirty Bit (D) - Wurde die Seite modifiziert (bspw. durch Schreiben)?
 
 Ein Beispiel für die Notwendigkeit dieser Bits:
-Falls die Seite ausgelagert wird, muss das Betriebssystem wissen, ob die Änderungen im Speicher auf die Festplatte geschrieben werden müssen, oder ob die Seite verworfen werden kann. Dafür wird bspw. das Präsenzbit (P) genutzt.  
+Falls die Seite ausgelagert wird, muss das Betriebssystem wissen, ob die Änderungen im Speicher auf die Festplatte geschrieben werden müssen, oder ob die Seite verworfen werden kann. Dafür wird bspw. das Dirty Bit (D) genutzt.  
