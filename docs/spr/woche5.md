@@ -109,10 +109,10 @@ Die Seitentabelle hat $2^4 = 16$ Eintrage und liegt in einem (physischen) Speich
 Abbildung 1: Beispielhafte Seitentabelle
 
 ### Status-Bits der Seitentabelle
-Die Seitentabelle enthält, zusätzlich zur Kachelnummer, weitere Metadaten (Status-Bits) die vom Betriebssystem genutzt werden. Ein paar Beispiele:
+Die Seitentabelle enthält, zusätzlich zur Kachelnummer, weitere Metadaten (Status-Bits) die vom Betriebssystem/der CPU genutzt werden. Ein paar Beispiele:
 - Präsenzbit (P) - Ist die Seite im Hauptspeicher vorhanden?
 - Referenzbit (R) oder Access Bit (A) - Wurde auf die Seite bereits zugegriffen?
 - Modifikationsbit (M) oder Dirty Bit (D) - Wurde die Seite modifiziert (bspw. durch Schreiben)?
 
 Ein Beispiel für die Notwendigkeit dieser Bits:
-Falls die Seite ausgelagert wird, muss das Betriebssystem wissen, ob die Änderungen im Speicher auf die Festplatte geschrieben werden müssen, oder ob die Seite verworfen werden kann. 
+Falls die Seite ausgelagert wird, muss das Betriebssystem wissen, ob die Änderungen im Speicher auf die Festplatte geschrieben werden müssen, oder ob die Seite verworfen werden kann. Dafür wird bspw. das Präsenzbit (P) genutzt.  
