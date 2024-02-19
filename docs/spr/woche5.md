@@ -18,17 +18,7 @@ title: "Woche 5"
 3. Buddy Verfahren: auch hier interner Verschnitt groß, und sichtbar mehr Verwaltungsdaten als die anderen, wenig externer Verschnitt.
 
 ## Speicherauslastung und Verschnitt
-$$
-\text{Speicherauslastung} = \frac{\text{Größe des belegten Speichers}}{\text{Größe des gesamten Speichers}}
-$$
-
-$$
-\text{Interner Verschnitt} = \frac{\text{Größe des belegten, aber nicht genutzten Speichers}}{\text{Größe des belegten Speichers}}
-$$
-
-$$
-\text{Externer Verschnitt} = \frac{\text{Größe des freien, aber nicht belegten Speichers}}{\text{Größe des belegten Speichers}}
-$$
+![speicher_verschnitt](./assets/w5_verschnitt.png)
 
 ## Page Faults (Seitenfehler)
 Page Fault: Programm versucht auf eine Seite zuzugreifen, welche gerade nicht im virtuellen
@@ -52,14 +42,13 @@ Segmentation Fault.
 ### Adressübersetzungsverfahren
 Das Adressübersetzungsverfahren wird genutzt um virtuelle in physische Speicheradressen zu übersetzen. Das folgende Diagramm illustriert die dafür genutzten Verfahren. Die elementaren Bausteine (1-5) werden folgend auch weiter erklärt. 
 
-![virt_addr_uebersetzung](./assets/virt_addr_uebersetzung.png)
+![virt_addr_uebersetzung](./assets/w5_virt_addr_uebersetzung.png)
 
-1. **Virtuelle Adresse**: Die Virtuelle Adresse ist die, die der Prozess "sieht". Sobald der Prozess auf Speicher zugreifen möchte ...
-   Die virtuelle Adresse wird in zwei Teile, nämlich den _Seitenindex_ sowie den _Offset_ aufgeteilt - wie das Verfahrung zur Berechnung der beiden Teile aussieht schauen wir uns gleich an. 
-2. **Tabellenbasisadresse**: Diese enthält die - wer hätte es gedacht - Adresse des ersten Eintrags der Seitentabelle. 
-3. Die _Seitenzahl_, sowie _Tabellenbasisadresse_ werden addiert um den entsprechenden Eintrag der Seitentabelle bestimmen zu können. 
-4. **Seitentabelle**: Die Seitentabelle enthält das _Mapping_ zwischen virtuellen und physischen Adressen. Zusätzlich dazu enthält es weitere Status-Bits um den aktuellen Zustand der Seite zu markieren. (Link zu [XXXXXXX](#status-bits-der-seitentabelle))
-5. **Physischer Speicher**: Im physischen Speicher sind die Daten letztendlich gespeichert. Dieses ist in Kacheln unterteilt (typischerweise von 4096 Byte)... USW
+1. Virtuelle Adresse: Die Virtuelle Adresse ist die, die der Prozess "sieht"/"nutzt". Sobald der Prozess auf Speicher zugreifen möchte, muss die Adresse übersetzt werden um auf den physischen Speicher zugreifen zu können. Die virtuelle Adresse wird in zwei Teile, nämlich die **Seitennummer** sowie den **Offset** aufgeteilt.
+2. Tabellenbasisadresse: Diese enthält die _physische Adresse_ des ersten Eintrags der Seitentabelle. 
+3. Der Seitenindex, sowie Tabellenbasisadresse werden addiert um den entsprechenden Eintrag der Seitentabelle bestimmen zu können. Anders gesagt nutzen wir den Seitenindex als _Index_ für die Seitentabelle. Ein Seitenindex von `0x2` würde also den zweiten Eintrag der Seitentabelle "ansprechen".
+4. Seitentabelle: Die Seitentabelle enthält die Kachelnummern der dazugehörigen Seitennummer im virtuellen Speicher. Zusätzlich dazu enthält es weitere [Status-Bits](#status-bits-der-seitentabelle) um den aktuellen Zustand der Seite zu markieren.
+5. Physischer Speicher: Im physischen Speicher sind die Daten letztendlich gespeichert. Dieses ist in Kacheln (engl. Page Frames) unterteilt. In modernen Architekturen entspricht die Größe der Kacheln oft `4096 Byte` (`4 kB`). 
 
 ---
 
@@ -75,28 +64,35 @@ Die Seitentabelle hat $2^4 = 16$ Eintrage und liegt in einem (physischen) Speich
 
 1. **Bestimmung der Bitanzahl für Seitennummer und Offset**:
 
-   Da die Seitentabelle $2^4 = 16$ Einträge hat, benötigen wir $4$ Bits, um jede Seite zu identifizieren. Das ermöglicht es uns, jede der $16$ möglichen Seitennummern zu adressieren.
+   Da die Seitentabelle $2^4 = 16$ Einträge hat, benötigen wir $4$ Bits, um jede Seite zu indizieren.
 
-   Der Speicher hat eine Größe von $2^8 = 256$ Byte, und da wir $2^4 = 16$ Seiten haben, ist jede Seite $2^8 / 2^4 = 2^4 = 16$ Byte groß. Um alle möglichen Offsets innerhalb einer Seite zu adressieren, benötigen wir ebenfalls $4$ Bits.
+   Die zu übersetzende Adresse `0x2B` lässt sich also in $8$ Bit (`0010 1011`) darstellen. Wir benötigen $4$ Bit für die Seitennummer. Es bleiben entsprechend $4$ Bit für den Offset übrig. 
 
-   Die virtuelle Adresse muss daher mindestens $8$ Bits lang sein, um den gesamten physischen Speicher abzudecken.
+   :::info[Erinnerung]
+   Jedes "Zeichen" in Hexadezimal lässt sich als $4$ Bits darstellen. So ist bspw. `0xA` = `1010`.
+   :::
 
 2. **Aufteilung der virtuellen Adresse `0x2B`**:
+   
+   `0x2B` = `0010 1011`
 
-   Die ersten $4$ Bits (höherwertige Bits) geben den Seitenindex an, und die letzten $4$ Bits (niederwertige Bits) stellen den Offset dar.
+   Die ersten $4$ Bits geben die Seitennummer an, und die letzten $4$ Bits stellen den Offset dar.
 
-   Für `0x2B`:
-   - Seitenindex = `0x2`
-   - Offset = `0xB`
+   - Seitennummer = `0010` = `0x2`
+   - Offset = `1011` = `0xB`
 
-3. **Ermittlung der physischen Adresse**:
+3. **Ermittlung der Kachelnummer**:
 
-   Die Tabellenbasisadresse beträgt 0x9E. Um die Adresse in der Seitentabelle zu finden, die dem Seitenindex entspricht, addieren wir den Seitenindex zur Tabellenbasisadresse: `0x9E + 0x2 = 0xA0`.
-   Wir suchen dann in der Seitentabelle nach dem Eintrag an der Adresse `0xA0`. Angenommen, dieser Eintrag hat den Wert `0xF`, der die Basisadresse der Seite im physischen Speicher angibt.
+   Die Tabellenbasisadresse beträgt `0x9E`. Um die Adresse in der Seitentabelle zu finden, die der Seitennummer entspricht, addieren wir den Seitenindex zur Tabellenbasisadresse: `0x9E + 0x2 = 0xA0`.
+   Wir suchen dann in der Seitentabelle nach dem Eintrag an der Adresse `0xA0`. Die Kachelnummer an dieser Adresse entspricht `0xF`.
+
+   :::info[Hinweis]
+   Wie oben angesprochen nutzen wir die Seitennummer um die Einträge der Seitentabelle zu indizieren. Ähnlich wie in einem C-Array können wir uns die Seitennummer als Array-Index vorstellen. Ausgehend von der Tabellenbasisadresse `0x9E`, ist `0x2` also der dritte (wir zählen ab $0$) Eintrag in der Seitentabelle. Im Beispiel unten wäre das also `0xA2`.
+   :::
 
 4. **Zusammensetzung der physischen Adresse**:
 
-   Die physische Adresse wird gebildet, indem die Basisadresse der Seite im physischen Speicher (`0xF`) mit dem Offset (`0xB`) konkateniert wird. Das ergibt die physische Adresse `0xFB`.
+   Die physische Adresse wird gebildet, indem wir die Kachelnummer (`0xF`) mit dem aus der virtuellen Adresse berechneten Offset (`0xB`) konkatenieren. Die physische Adresse entspricht also `0xFB`.
 
 | Speicheradresse | Daten |
 |:---------------:|:-----:|
@@ -110,8 +106,13 @@ Die Seitentabelle hat $2^4 = 16$ Eintrage und liegt in einem (physischen) Speich
 |      0xA2       |  0xC  |
 |      0xA3       |  0xD  |
 
-:::danger[Achtung]
-Ein Zeichen im Hexadezimalsystem entspricht $4$ Bits. Angenommen wir haben eine Seitentabelle der Größe $2^5$, dann wären die ersten $5$ Bits der Adresse für die Seitennummer bestimmt (es blieben bei einer $8$ Bit virtuellen Adresse dann nur noch $3$ Bits für den Offset). Wenn dies der Fall ist müssen wir die virtuelle Adresse zunächst in ihre Binärdarstellung zerlegen um die ersten $5$ Bits zu identifizieren. Die restlichen Schritte sind analog.  
-:::
+Abbildung 1: Beispielhafte Seitentabelle
 
 ### Status-Bits der Seitentabelle
+Die Seitentabelle enthält, zusätzlich zur Kachelnummer, weitere Metadaten (Status-Bits) die vom Betriebssystem genutzt werden. Ein paar Beispiele:
+- Präsenzbit (P) - Ist die Seite im Hauptspeicher vorhanden?
+- Referenzbit (R) oder Access Bit (A) - Wurde auf die Seite bereits zugegriffen?
+- Modifikationsbit (M) oder Dirty Bit (D) - Wurde die Seite modifiziert (bspw. durch Schreiben)?
+
+Ein Beispiel für die Notwendigkeit dieser Bits:
+Falls die Seite ausgelagert wird, muss das Betriebssystem wissen, ob die Änderungen im Speicher auf die Festplatte geschrieben werden müssen, oder ob die Seite verworfen werden kann. 
