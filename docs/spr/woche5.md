@@ -46,7 +46,7 @@ Das Adressübersetzungsverfahren wird genutzt um virtuelle in physische Speicher
 
 1. Virtuelle Adresse: Die Virtuelle Adresse ist die, die der Prozess "sieht"/"nutzt". Sobald der Prozess auf Speicher zugreifen möchte, muss die Adresse übersetzt werden um auf den physischen Speicher zugreifen zu können. Die virtuelle Adresse wird in zwei Teile, nämlich die **Seitennummer** sowie den **Offset** aufgeteilt.
 2. Tabellenbasisadresse: Diese enthält die _physische Adresse_ des ersten Eintrags der Seitentabelle. 
-3. Der Seitenindex, sowie Tabellenbasisadresse werden addiert um den entsprechenden Eintrag der Seitentabelle bestimmen zu können. Anders gesagt nutzen wir den Seitenindex als _Index_ für die Seitentabelle. Ein Seitenindex von `0x2` würde also den zweiten Eintrag der Seitentabelle "ansprechen".
+3. Der Seitenindex, sowie Tabellenbasisadresse werden addiert um den entsprechenden Eintrag der Seitentabelle bestimmen zu können. Anders gesagt nutzen wir die Seitennummer als _Index_ für die Seitentabelle.
 4. Seitentabelle: Die Seitentabelle enthält die Kachelnummern der dazugehörigen Seitennummer im virtuellen Speicher. Zusätzlich dazu enthält es weitere [Status-Bits](#status-bits-der-seitentabelle) um den aktuellen Zustand der Seite zu markieren.
 5. Physischer Speicher: Im physischen Speicher sind die Daten letztendlich gespeichert. Dieses ist in Kacheln (engl. Page Frames) unterteilt. In modernen Architekturen entspricht die Größe der Kacheln oft `4096 Byte` (`4 kB`). 
 
@@ -56,7 +56,7 @@ Das Adressübersetzungsverfahren wird genutzt um virtuelle in physische Speicher
 Wir schauen uns nun anhand des folgenden Beispiels die Handsimulation (bzw. das manuelle Übersetzen der Speicheradressen) an. 
 
 :::info[Erinnerung]
-Mit $n$ Bits können wir $2^n$ unterschiedliche Werte abbilden. Nämlich alle Zahlen im Intervall: $[0, 2^n-1]$.
+Mit $n$ Bits können wir $2^n$ unterschiedliche Werte abbilden. Nämlich alle Ganzzahlen im Intervall: $[0, 2^n-1]$.
 :::
 
 Ordnen Sie mithilfe der Seitentabelle den folgenden virtuellen Adressen ihre physische Adresse zu.
@@ -64,19 +64,19 @@ Die Seitentabelle hat $2^4 = 16$ Eintrage und liegt in einem (physischen) Speich
 
 1. **Bestimmung der Bitanzahl für Seitennummer und Offset**:
 
-   Da die Seitentabelle $2^4 = 16$ Einträge hat, benötigen wir $4$ Bits, um jede Seite zu indizieren.
+   Da die Seitentabelle $2^4 = 16$ Einträge hat, benötigen wir $4$ Bits, um jeden Eintrag der Seitentabelle zu indizieren.
 
-   Die zu übersetzende Adresse `0x2B` lässt sich also in $8$ Bit (`0010 1011`) darstellen. Wir benötigen $4$ Bit für die Seitennummer. Es bleiben entsprechend $4$ Bit für den Offset übrig. 
+   Die zu übersetzende Adresse `0x2B` lässt sich mit $8$ Bits (`0010 1011`) darstellen. Wir benötigen $4$ Bit für die Seitennummer. Es bleiben entsprechend $8 - 4 = 4$ Bits für den Offset übrig. 
 
    :::info[Erinnerung]
-   Jedes "Zeichen" in Hexadezimal lässt sich als $4$ Bits darstellen. So ist bspw. `0xA` = `1010`.
+   Jedes "Symbol" in Hexadezimal lässt sich mit $4$ Bits darstellen. So ist bspw. `0xA` = `1010`.
    :::
 
 2. **Aufteilung der virtuellen Adresse `0x2B`**:
    
    `0x2B` = `0010 1011`
 
-   Die ersten $4$ Bits geben die Seitennummer an, und die letzten $4$ Bits stellen den Offset dar.
+   Die ersten $4$ Bits geben die Seitennummer an, die letzten $4$ Bits den Offset.
 
    - Seitennummer = `0010` = `0x2`
    - Offset = `1011` = `0xB`
@@ -87,26 +87,42 @@ Die Seitentabelle hat $2^4 = 16$ Eintrage und liegt in einem (physischen) Speich
    Wir suchen dann in der Seitentabelle nach dem Eintrag an der Adresse `0xA0`. Die Kachelnummer an dieser Adresse entspricht `0xF`.
 
    :::info[Hinweis]
-   Wie oben angesprochen nutzen wir die Seitennummer um die Einträge der Seitentabelle zu indizieren. Ähnlich wie in einem C-Array können wir uns die Seitennummer als Array-Index vorstellen. Ausgehend von der Tabellenbasisadresse `0x9E`, ist `0x2` also der dritte (wir zählen ab $0$) Eintrag in der Seitentabelle. Im Beispiel unten wäre das also `0xA2`.
+   Wie oben angesprochen nutzen wir die Seitennummer um die Einträge der Seitentabelle zu indizieren. Ähnlich wie in einem C-Array können wir uns die Seitennummer als Array-Index vorstellen. Ausgehend von der Tabellenbasisadresse `0x9E`, ist `0x2` also der dritte (wir zählen ab $0$) Eintrag in der Seitentabelle. Im Beispiel unten wäre das also `0xA0`.
    :::
 
 4. **Zusammensetzung der physischen Adresse**:
 
    Die physische Adresse wird gebildet, indem wir die Kachelnummer (`0xF`) mit dem aus der virtuellen Adresse berechneten Offset (`0xB`) konkatenieren. Die physische Adresse entspricht also `0xFB`.
 
+
+#### Dazugehörige Seitentabelle:
+
 | Speicheradresse | Daten |
 |:---------------:|:-----:|
-|      0x9A       |  0x4  |
-|      0x9B       |  0x5  |
-|      0x9C       |  0x2  |
-|      0x9D       |  0x1  |
-|      0x9E       |  0x0  |
-|      0xA0       |  0xF  |
-|      0xA1       |  0xA  |
-|      0xA2       |  0xC  |
-|      0xA3       |  0xD  |
-
-Abbildung 1: Beispielhafte Seitentabelle
+|       ...       |  ...  |
+|     `0x9A`      | `0x4` |
+|     `0x9B`      | `0x5` |
+|     `0x9C`      | `0x2` |
+|     `0x9D`      | `0x1` |
+|     `0x9E`      | `0x0` |
+|     `0x9F`      | `0x0` |
+|     `0xA0`      | `0xF` |
+|     `0xA1`      | `0xA` |
+|     `0xA2`      | `0xC` |
+|     `0xA3`      | `0xD` |
+|     `0xA4`      | `0x3` |
+|     `0xA5`      | `0x7` |
+|     `0xA6`      | `0x8` |
+|     `0xA7`      | `0xC` |
+|     `0xA8`      | `0x9` |
+|     `0xA9`      | `0x1` |
+|     `0xAA`      | `0x6` |
+|     `0xAB`      | `0x7` |
+|     `0xAC`      | `0x0` |
+|     `0xAD`      | `0x1` |
+|     `0xAE`      | `0x4` |
+|     `0xAF`      | `0xF` |
+|       ...       |  ...  |
 
 ### Status-Bits der Seitentabelle
 Die Seitentabelle enthält, zusätzlich zur Kachelnummer, weitere Metadaten (Status-Bits) die vom Betriebssystem/der CPU genutzt werden. Ein paar Beispiele:
