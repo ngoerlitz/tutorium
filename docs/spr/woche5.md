@@ -97,32 +97,22 @@ Die Seitentabelle hat $2^4 = 16$ Eintrage und liegt in einem (physischen) Speich
 
 #### Dazugehörige Seitentabelle:
 
-| Speicheradresse | Daten |
-|:---------------:|:-----:|
-|       ...       |  ...  |
-|     `0x9A`      | `0x4` |
-|     `0x9B`      | `0x5` |
-|     `0x9C`      | `0x2` |
-|     `0x9D`      | `0x1` |
-|     `0x9E`      | `0x0` |
-|     `0x9F`      | `0x0` |
-|     `0xA0`      | `0xF` |
-|     `0xA1`      | `0xA` |
-|     `0xA2`      | `0xC` |
-|     `0xA3`      | `0xD` |
-|     `0xA4`      | `0x3` |
-|     `0xA5`      | `0x7` |
-|     `0xA6`      | `0x8` |
-|     `0xA7`      | `0xC` |
-|     `0xA8`      | `0x9` |
-|     `0xA9`      | `0x1` |
-|     `0xAA`      | `0x6` |
-|     `0xAB`      | `0x7` |
-|     `0xAC`      | `0x0` |
-|     `0xAD`      | `0x1` |
-|     `0xAE`      | `0x4` |
-|     `0xAF`      | `0xF` |
-|       ...       |  ...  |
+Die Seitentabelle wurde aus Gründen der Lesbarkeit in zwei Teile aufgespaltet. Beachte dabei die fortlaufenden Speicheradressen.
+
+| Speicheradresse | Daten |    | Speicheradresse | Daten |
+|:---------------:|:-----:|:--:|:---------------:|:-----:|
+|       ...       |  ...  |    |     `0xA5`      | `0x7` |
+|     `0x9A`      | `0x4` |    |     `0xA6`      | `0x8` |
+|     `0x9B`      | `0x5` |    |     `0xA7`      | `0xC` |
+|     `0x9C`      | `0x2` |    |     `0xA8`      | `0x9` |
+|     `0x9D`      | `0x1` |    |     `0xA9`      | `0x1` |
+|     `0x9E`      | `0x0` |    |     `0xAA`      | `0x6` |
+|     `0x9F`      | `0x0` |    |     `0xAB`      | `0x7` |
+|     `0xA0`      | `0xF` |    |     `0xAC`      | `0x0` |
+|     `0xA1`      | `0xA` |    |     `0xAD`      | `0x1` |
+|     `0xA2`      | `0xC` |    |     `0xAE`      | `0x4` |
+|     `0xA3`      | `0xD` |    |     `0xAF`      | `0xF` |
+|     `0xA4`      | `0x3` |    |       ...       |  ...  |
 
 ### Status-Bits der Seitentabelle
 Die Seitentabelle enthält, zusätzlich zur Kachelnummer, weitere Metadaten (Status-Bits) die vom Betriebssystem/der CPU genutzt werden. Ein paar Beispiele:
