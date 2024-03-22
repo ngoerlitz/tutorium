@@ -1,8 +1,8 @@
 ---
-title: "Woche 5"
+title: "Tutorium 5"
 ---
 
-# Woche 5 - Speicherverwaltung
+# Speicherverwaltung
 
 ## Arten der Speicherverwaltung
 1. Verkettete Liste: Statusinformationen vor jedem Block (Große, frei oder belegt). Kein interner ¨
