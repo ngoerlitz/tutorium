@@ -114,7 +114,7 @@ int main() {
 <details>
   <summary>Lösung</summary>
   <div>
-    Die Variable `meinezahl` wird kopiert und der Funktion `upgrade` übergeben. Die Funktion `upgrade` überschreibt die lokale Kopie der Variable mit dem Wert 18. Die "originale" Variable `int meinezahl`, welche in der `main` Funktion deklariert wurde ist hiervon unberührt. Entsprechend wird 5 ausgegeben. 
+    Die Variable `meinezahl` wird kopiert und der Funktion `upgrade` übergeben. Die Funktion `upgrade` überschreibt die lokale Kopie der Variable mit dem Wert 18. Die "originale" Variable `int meinezahl`, welche in der `main` Funktion deklariert wurde, ist hiervon unberührt. Entsprechend wird 5 ausgegeben. 
   </div>
 </details>
 
@@ -140,7 +140,7 @@ int main() {
 <details>
   <summary>Lösung</summary>
   <div>
-    Die Variable `meinezahl` wird ebenfalls wieder kopiert und an die `upgrade` Funktion übergeben. Diesmal handelt es sich bei der Variable `meinezahl` aber um eine Variable vom Typ `int*`. Entsprechend kopieren wir keinen Wert, sondern kopieren eine Speicheradresse. Auf diese kann dann die `upgrade` Funktion mit Hilfe des Dereferenzierungsoperators (`*`) zugreifen. Da wir jetzt direkt an der Speicheradresse der Variable `meinezahl` schreiben, ändern wir somit auch den "korrekten" Wert. Als Ausgabe wird diesmal 18 ausgegeben. 
+    Die Variable `meinezahl` wird ebenfalls wieder kopiert und an die `upgrade` Funktion übergeben. Diesmal handelt es sich bei der Variable `meinezahl` aber um eine Variable vom Typ `int*`. Entsprechend kopieren wir keinen Wert, sondern kopieren eine Speicheradresse. Auf diese kann dann die `upgrade` Funktion mithilfe des Dereferenzierungsoperators (`*`) zugreifen. Da wir jetzt direkt an der Speicheradresse der Variable `meinezahl` schreiben, ändern wir somit auch den "korrekten" Wert. Als Ausgabe wird diesmal 18 ausgegeben. 
   </div>
 </details>
 
@@ -164,12 +164,12 @@ int main() {
 <details>
   <summary>Lösung</summary>
   <div>
-    Wieder 5, obwohl call-by-reference. Es wird der Pointer manipuliert, nicht sein Inhalt geändert, da das Sternchen fehlt. Tatsachlich kommt es hier auch auf den genutzten Compiler an. Clang gibt einen Error aus und kompiliert das Programm nicht, während gcc nur eine Warnung ausgibt. _Getestet mit Clang Version 15.0.7 und gcc Version 12.2.1_
+    Wieder 5, obwohl call-by-reference. Es wird der Pointer manipuliert, nicht sein Inhalt geändert, da das Sternchen fehlt. Tatsächlich kommt es hier auch auf den genutzten Compiler an. Clang gibt einen Error aus und kompiliert das Programm nicht, während gcc nur eine Warnung ausgibt. _Getestet mit Clang Version 15.0.7 und gcc Version 12.2.1_
   </div>
 </details>
 
 #### 4.
-Welchen Wert nehmen t1, t2 und t3 an? Warum? Zu welchen Fehlern kann das fuhren?
+Welchen Wert nehmen t1, t2 und t3 an? Warum? Zu welchen Fehlern kann das führen?
 ```c showLineNumbers
 #include <stdio.h>
 #include <stdlib.h>

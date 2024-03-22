@@ -2,6 +2,8 @@
 title: "Tutorium 2"
 ---
 
+# Scheduling
+
 ## Scheduling
 Eine zentrale Aufgabe eines Betriebssystems ist das sogenannte Scheduling. 
 Welche Eigenschaften besitzt ein gutes Schedulingverfahren?
@@ -21,26 +23,48 @@ Für die folgenden Schedulingstrategien nutzen wir folgende Prozesse:
 
 
 #### FCFS
+Beim klassichen FCFS (First Come First Served) werden Prozesse in ihrer Ankunftsreihenfolge abgearbeitet. Dieses Verfahren ist nicht verdrängend. Die Queue wird anhand der weiteren Ankunftsreihenfolge aufgefüllt. 
 
 ![fcfs](./assets/w2_fcfs.png)
 
 #### Prio-NP
+Beim scheduling Verfahren Priority - Non Preemptive werden Prozesse anhand ihrer Priorität abgearbeitet. Ein Prozess mit einer höheren Priorität wird entsprechend höher in der Warteschlange (Queue) positioniert. Auch dieses Verfahren ist nicht präemptiv.  
 
-![priono](./assets/w2_prionp.png)
+![prionp](./assets/w2_prionp.png)
 
 #### SRTN
+Beim SRTN (Shortest Remaining Time Next) Verfahren werden Prozesse anhand ihrer Ausführungsdauer/Bedienzeit abgearbeitet. Ein kürzerer Prozess (d.h. kürzere Bedienzeit) wird hierbei vorgezogen und verdrängt einen bereits laufenden Prozess, sofern die Restlaufzeit geringer ist. 
 
 ![srtn](./assets/w2_srtn.png)
 
 #### Round Robin ($\tau$ = 2)
+Beim Round-Robin Verfahren wechseln sich die Prozesse alle $\tau$ Zeiteinheiten ab. In unserem Fall läuft ein Prozess für $\tau = 2 $ Zeiteinheiten, bevor dieser verdrängt und durch einen bereits wartenden Prozess ersetzt wird. Der verdrängte Prozess reiht sich am Ende der Warteschlange (auch nach neu ankommenden Prozessen) ein. 
 
 ![rr_tau_2](./assets/w2_rr_tau_2.png)
+
+#### MLF
+Das MLF Verfahren ist von den bisher genannten am kompliziertesten - aber keine Sorge, auch dieses ist machbar! In der Aufgabenstellung ist die Zeitscheibe $\tau$ gegeben als $\tau_i = 2^i$ mit $i \in \{0, 1, \ldots\}$. Anhand dieser Formel berechnen wir nun einige der Level mit der jeweils dazugehörigen Zeitscheibe: 
+
+|  Level ($i$)  | Zeitscheibe ($\tau_i$) |
+|:-------------:|:----------------------:|
+|       0       |       $2^0 = 1$        |
+|       1       |       $2^1 = 2$        |
+|       2       |       $2^2 = 4$        |
+|       3       |       $2^3 = 8$        |
+
+Nun zur Funktionalität des Schedulingverfahrens. Jeder neu ankommende Prozess befindet sich zunächst im niedrigsten Level (Level 0). Je niedriger ein Level, desto höher ist die Priorität. Ein Prozess, welcher sich in Level 0 befindet, hat dementsprechend eine höhere Priorität als einer, der sich in Level 1 befindet. 
+
+Ein Prozess kann jetzt so lange rechnen, bis die Zeitscheibe abgelaufen, oder der Prozess fertig ist. Ist der Prozess nach Ende der Zeitscheibe nicht fertig, so wird dieser in der nächsthöheren Ebene in die Warteschlange platziert. Wenn es auf dieser Ebene bereits einen wartenden Prozess gibt, so werden beide nach dem FCFS (Queue) Verfahren abgearbeitet. 
+
+Neu ankommende Prozesse verdrängen (in diesem Modul) in der Regel keine bereits laufenden Prozesse - lest aber unbedingt die Aufgabenstellung um euch sicher zu sein! Das heißt ein Prozess in einer niedrigeren Ebene kommt erst zum Ende des aktuell laufenden Prozesses zur Ausführung. 
+
+![mlf](./assets/w2_mlf.png)
 
 ### Wartezeit und Antwortzeit
 - Die Wartezeit ist die Zeit zwischen Ankunft und Beendigung, in der der Prozess nicht ausgeführt wird (d.h. wartet)
 - Antwortzeit ist die Zeit zwischen Ankunft und Beendigung des Prozesses (= Wartezeit + Bedienzeit)
 
-Die Warte-/Antwortzeit des Systems setzt sich aus der Gesamtwartezeit der Prozesse geteilt durch die Anzahl an Prozessen zusammen. Es wird damit die durchschnittliche Warte-/Antwortzeit eines Verfahrens bestimmt. Wir nutzen als Beispiel die Wartezeiten von FCFS. In diesem Fall haben wir eine gesamte Wartezeit von:
+Die mittlere Warte-/Antwortzeit des Systems setzt sich aus der Gesamtwartezeit der Prozesse geteilt durch die Anzahl an Prozessen zusammen. Es wird damit die durchschnittliche Warte-/Antwortzeit eines Verfahrens bestimmt. Wir nutzen als Beispiel die Wartezeiten von FCFS. In diesem Fall haben wir eine gesamte Wartezeit von:
 $$
 \sum_{i = 1}^{4} w_i = 0 + 2 + 4 + 8 = 14
 $$
@@ -89,4 +113,16 @@ Für die oben gezeigten Schedulingverfahren gelten die folgenden Zeiten:
 ### Zulässiger Schedule
 $$
 \sum_{i = 1}^{n} \frac{D_i}{P_i} = \left( \frac{1}{3} + \frac{1}{5} + \frac{1}{5} \right) \approx 0.73 \leq 1
+$$
+
+Hyperperiode:
+$$
+t_{\text{HP}} = \text{LCM}(P_i) = \text{LCM}(3, 5, 5) = 15
+$$
+
+![Period](./assets/w2_period.png)
+
+Hinreichende Bedingung: 
+$$
+\sum_{i = 1}^{n} \frac{D_i}{P_i} = \left( \frac{1}{3} + \frac{1}{5} + \frac{1}{5} \right) \approx 0.73 \leq n \cdot \left( \sqrt[n]{2} - 1 \right) \approx 0.7798
 $$
