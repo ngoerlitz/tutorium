@@ -46,7 +46,7 @@ Die Größe von Typen kann sich zwischen verschiedenen Architekturen unterscheid
 
 In unserem Beispiel wollen wir nun diese beiden Funktionen nutzen, um eine `int` Variable, sowie ein `int`-Array mit 4 Elementen auf dem Heap anzulegen. Dazu nutzen wir die Tatsache, dass uns `malloc` einen zusammenhängenden Speicherblock zurückgibt. Um ein Array auf dem Heap anzulegen, können wir also einen Block anfordern, der die Größe besitzt um 4 `int` Variablen speichern zu können. 
 
-```c
+```c showLineNumbers
 #include <stdlib.h> // Enthält Definition von malloc
 
 int main() {
@@ -97,7 +97,7 @@ printf("%p", &b); // 0x8
 #### 1.
 Welche Ausgabe produziert folgendes Programm? Warum?
 
-```c
+```c showLineNumbers
 #include <stdio.h>
 
 void upgrade(int meinezahl) {
@@ -121,7 +121,7 @@ int main() {
 #### 2.
 Welche Ausgabe produziert folgendes Programm? Warum?
 
-```c
+```c showLineNumbers
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -146,7 +146,7 @@ int main() {
 
 #### 3.
 Welche Zahl wird jetzt ausgegeben? Warum?
-```c
+```c showLineNumbers
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -170,7 +170,7 @@ int main() {
 
 #### 4.
 Welchen Wert nehmen t1, t2 und t3 an? Warum? Zu welchen Fehlern kann das fuhren?
-```c
+```c showLineNumbers
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -350,12 +350,12 @@ Angenommen wir fügen jetzt einen Prozess hinzu, der parallel zu $P2$ ausgeführ
 ![Demo 2](./assets/w1_parallel_demo_2.png)
 
 Der dazugehörige `fork/join` Pseudocode:
-```
-1   P1;
-2   fork P4;
-3   P2;
-4   join P4;
-5   P3;
+```c showLineNumbers
+P1;
+fork P4;
+P2;
+join P4;
+P3;
 ```
 Dieser Pseudocode sagt:
 1. Führe $P1$ aus.

@@ -38,7 +38,7 @@ Für die folgenden Schedulingstrategien nutzen wir folgende Prozesse:
 
 ### Wartezeit und Antwortzeit
 - Die Wartezeit ist die Zeit zwischen Ankunft und Beendigung, in der der Prozess nicht ausgeführt wird (d.h. wartet)
-- Antwortzeit ist die Zeit zwischen Ankunft und Beendigung des Prozesses
+- Antwortzeit ist die Zeit zwischen Ankunft und Beendigung des Prozesses (= Wartezeit + Bedienzeit)
 
 Die Warte-/Antwortzeit des Systems setzt sich aus der Gesamtwartezeit der Prozesse geteilt durch die Anzahl an Prozessen zusammen. Es wird damit die durchschnittliche Warte-/Antwortzeit eines Verfahrens bestimmt. Wir nutzen als Beispiel die Wartezeiten von FCFS. In diesem Fall haben wir eine gesamte Wartezeit von:
 $$
@@ -88,5 +88,5 @@ Für die oben gezeigten Schedulingverfahren gelten die folgenden Zeiten:
 
 ### Zulässiger Schedule
 $$
-\sum_{i = 1}^{n} \frac{D_i}{P_i} = (\frac{1}{3} + \frac{1}{5} + \frac{1}{5}) \approx 0.73 \leq 1
+\sum_{i = 1}^{n} \frac{D_i}{P_i} = \left( \frac{1}{3} + \frac{1}{5} + \frac{1}{5} \right) \approx 0.73 \leq 1
 $$
