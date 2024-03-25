@@ -40,6 +40,11 @@ Beim SRTN (Shortest Remaining Time Next) Verfahren werden Prozesse anhand ihrer 
 #### Round Robin ($\tau$ = 2)
 Beim Round-Robin Verfahren wechseln sich die Prozesse alle $\tau$ Zeiteinheiten ab. In unserem Fall läuft ein Prozess für $\tau = 2 $ Zeiteinheiten, bevor dieser verdrängt und durch einen bereits wartenden Prozess ersetzt wird. Der verdrängte Prozess reiht sich am Ende der Warteschlange (auch nach neu ankommenden Prozessen) ein. 
 
+Für das Round Robin Verfahren existiert folgende Checkliste:
+1. **Kommt ein neuer Prozess an?** Wenn ja, so wird dieser am Ende der Queue eingefügt
+2. **Ist das Quantum abgelaufen?** Wenn ja, so wird der Prozess, der die CPU belegt am Ende der Queue eingefügt
+3. **Ist die CPU ungenutzt?** Wenn ja, so wird in der Queue nachgeschaut, ob Prozesse warten. Dem Obersten (dem Prozess, der am längsten wartet) wird die CPU für die Länge eines Quantums ($\tau$) zur Verfügung gestellt. 
+
 ![rr_tau_2](./assets/w2_rr_tau_2.png)
 
 #### MLF
@@ -104,25 +109,69 @@ Für die oben gezeigten Schedulingverfahren gelten die folgenden Zeiten:
 
 
 ## Periodische Prozesse
+Ein periodischer Prozess ist ein Prozess, welcher innerhalb eines bestimmten Zeitraums immer wieder ausgeführt werden und vor einer bestimmten Deadline ausgeführt werden muss.
+
+### Zulässiger Schedule
+Ein zulässiger Schedule, d.h. eine gültige Reihenfolge der Prozesse, existiert, wenn folgende Formel gilt (_notwendige Bedingung_):
+$$
+\sum_{i = 1}^{n} \frac{D_i}{P_i} \leq 1
+$$
+
+### Ratenmonotonisches Verfahren
+Ratenmonotones Verfahren (rate monotonic scheduling)
+➢ Statische Priorität für jeden Prozess, die umgekehrt proportional ist zu der Periode,
+höhere Priorität verdrängt niedrige Priorität
+➢ Prozess mit der kleinsten Periode hat die höchste Priorität
+• Voraussetzung: Prozesse sind unabhängig und Sollzeitpunkte fallen mit den
+Perioden zusammen
+
+Hinreichende Bedingung:
+$$
+\sum_{i = 1}^{n} \frac{D_i}{P_i} \leq n \cdot \left(\sqrt[n]{2} - 1 \right)
+$$
+
+### Hyperperiode
+$$
+t_{\text{HP}} = \text{LCM}(P_i) = \text{LCM}(3, 5, 5) = 15
+$$
+
+### Beispiel
 |  Prozesse  |  Dauer ($D$)  |  Periode ($P$)  |
 |:----------:|:-------------:|:---------------:|
 |     A      |       1       |        3        |
 |     B      |       1       |        5        |
 |     C      |       1       |        5        |
 
-### Zulässiger Schedule
+![Period](./assets/w2_period.png)
+
+#### Zulässiger Schedule
 $$
 \sum_{i = 1}^{n} \frac{D_i}{P_i} = \left( \frac{1}{3} + \frac{1}{5} + \frac{1}{5} \right) \approx 0.73 \leq 1
 $$
 
-Hyperperiode:
-$$
-t_{\text{HP}} = \text{LCM}(P_i) = \text{LCM}(3, 5, 5) = 15
-$$
-
-![Period](./assets/w2_period.png)
-
-Hinreichende Bedingung: 
+#### Ist RMS (Rate Monotonic Scheduling) ein gültiger Schedule?
 $$
 \sum_{i = 1}^{n} \frac{D_i}{P_i} = \left( \frac{1}{3} + \frac{1}{5} + \frac{1}{5} \right) \approx 0.73 \leq n \cdot \left( \sqrt[n]{2} - 1 \right) \approx 0.7798
 $$
+
+## Scheduling Verfahren
+### Strategiealternativen
+
+### Betriebsziele
+- **Effizienz / Durchsatz**:
+  - FCFS
+  - LCFS
+  - SJN
+  - HRRN
+  - PRIO-NP
+  - RR
+- **Antwortzeit**: 
+  - SJN
+  - SRTN
+- **Fairness**: 
+  - RR
+  - HRRN
+
+:::info[TODO]
+    Complete Scheduling Verfahren
+:::
