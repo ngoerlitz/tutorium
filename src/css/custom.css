@@ -42,3 +42,12 @@
 code:not(:has(span)) {
   padding-inline: 5px !important;
 }
+
+[data-theme='light'] img[src$='#gh-dark-mode-only'],
+[data-theme='dark'] img[src$='#gh-light-mode-only'] {
+  display: none;
+}
+
+img {
+  max-width: min(760px, 100%);
+}

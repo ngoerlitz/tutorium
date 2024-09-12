@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="200mm"
+   height="60mm"
+   viewBox="0 0 199.99998 59.999998"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="tut_01_html_element_raw.svg"
+   inkscape:export-filename="tut_01_html_element.png"
+   inkscape:export-xdpi="250"
+   inkscape:export-ydpi="250"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="2.0899411"
+     inkscape:cx="337.56932"
+     inkscape:cy="150.00423"
+     inkscape:window-width="2560"
+     inkscape:window-height="1369"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer2" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:11.3343px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift Bold';letter-spacing:0px;fill:#000000;fill-opacity:1;stroke:#ff0101;stroke-width:2.2243;stroke-opacity:0.726058"
+       x="3.7040873"
+       y="36.26759"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Iosevka Nerd Font';-inkscape-font-specification:'Iosevka Nerd Font Semi-Bold';fill:#000000;fill-opacity:1;stroke:none;stroke-width:2.2243"
+         x="3.7040873"
+         y="36.26759">&lt;h1 lang=&quot;de&quot;&gt;Webtechnologien&lt;/h1&gt;</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Description">
+    <g
+       id="g4"
+       transform="matrix(2.4714445,0,0,2.4714445,-5.0859134,1.9875561)">
+      <g
+         id="g3"
+         style="stroke:#016aff;stroke-opacity:1"
+         transform="translate(0,6.5831202)">
+        <path
+           style="fill:none;fill-opacity:1;stroke:#016aff;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+           d="M 3.8572818,8.5592594 V 9.7778461"
+           id="path1"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#016aff;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+           d="M 35.293342,8.5592594 V 9.7778461"
+           id="path2"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#016aff;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+           d="M 35.285468,9.1685528 H 3.8968058"
+           id="path3"
+           sodipodi:nodetypes="cc" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:1.62068px;font-family:'Iosevka Nerd Font';-inkscape-font-specification:'Iosevka Nerd Font Semi-Bold';letter-spacing:0px;fill:#016aff;fill-opacity:1;stroke:#0187ff;stroke-width:0.0706779;stroke-dasharray:none;stroke-opacity:1"
+         x="18.356033"
+         y="17.550241"
+         id="text3"><tspan
+           sodipodi:role="line"
+           id="tspan3"
+           style="text-align:center;text-anchor:middle;fill:#016aff;fill-opacity:1;stroke:none;stroke-width:0.0706779"
+           x="18.356033"
+           y="17.550241">Start Tag</tspan><tspan
+           sodipodi:role="line"
+           style="text-align:center;text-anchor:middle;fill:#016aff;fill-opacity:1;stroke:none;stroke-width:0.0706779"
+           x="18.356033"
+           y="19.576092"
+           id="tspan31">(Opening Tag)</tspan></text>
+    </g>
+    <g
+       id="g7"
+       transform="matrix(2.4714445,0,0,2.4714445,108.41038,1.9875561)">
+      <g
+         id="g6"
+         style="stroke:#016aff;stroke-opacity:1"
+         transform="translate(0,6.5831202)">
+        <path
+           style="fill:none;fill-opacity:1;stroke:#016aff;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+           d="M 24.302934,8.5592594 V 9.7778461"
+           id="path4"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#016aff;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+           d="M 35.48324,8.5592594 V 9.7778461"
+           id="path5"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#016aff;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+           d="M 35.475366,9.1685528 H 24.342458"
+           id="path6"
+           sodipodi:nodetypes="cc" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:1.62068px;font-family:'Iosevka Nerd Font';-inkscape-font-specification:'Iosevka Nerd Font Semi-Bold';letter-spacing:0px;white-space:pre;inline-size:20.0452;display:inline;fill:#016aff;fill-opacity:1;stroke:#0187ff;stroke-width:0.0706779;stroke-dasharray:none;stroke-opacity:1"
+         x="30.693251"
+         y="17.550241"
+         id="text6"
+         transform="translate(-10.690842)"><tspan
+           x="30.693251"
+           y="17.550241"
+           id="tspan11"><tspan
+             style="text-align:center;text-anchor:middle;stroke:none"
+             id="tspan6">End Tag 
+</tspan></tspan><tspan
+           x="30.693251"
+           y="19.576091"
+           id="tspan13"><tspan
+             style="text-align:center;text-anchor:middle;stroke:none"
+             id="tspan12">(Closing Tag)</tspan></tspan></text>
+    </g>
+    <g
+       id="g10"
+       transform="matrix(2.4714445,0,0,2.4714445,-5.0859134,15.483216)">
+      <g
+         id="g9"
+         style="stroke:#010101;stroke-opacity:1"
+         transform="translate(0,6.5831202)">
+        <path
+           style="fill:none;fill-opacity:1;stroke:#010101;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+           d="M 3.8572818,8.5592594 V 9.7778461"
+           id="path7"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#010101;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+           d="M 81.434603,8.5592594 V 9.7778461"
+           id="path8"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#010101;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+           d="M 81.426729,9.1685528 H 3.8968058"
+           id="path9"
+           sodipodi:nodetypes="cc" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:1.62068px;font-family:'Iosevka Nerd Font';-inkscape-font-specification:'Iosevka Nerd Font Semi-Bold';letter-spacing:0px;fill:#000000;fill-opacity:1;stroke:#0187ff;stroke-width:0.0706779;stroke-dasharray:none;stroke-opacity:1"
+         x="37.91201"
+         y="17.550241"
+         id="text9"><tspan
+           sodipodi:role="line"
+           id="tspan9"
+           style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0706779"
+           x="37.91201"
+           y="17.550241">HTML-Element</tspan></text>
+    </g>
+    <g
+       id="g13"
+       transform="matrix(2.4714445,0,0,2.4714445,22.993843,1.9875561)">
+      <g
+         id="g12"
+         style="stroke:#ff7b01;stroke-opacity:1"
+         transform="translate(0,6.5831202)">
+        <path
+           style="fill:none;fill-opacity:1;stroke:#ff7b01;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+           d="M 24.302934,8.5592594 V 9.7778461"
+           id="path10"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#ff7b01;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+           d="M 58.498929,8.5592594 V 9.7778461"
+           id="path11"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#ff7b01;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+           d="M 58.491055,9.1685528 H 24.342458"
+           id="path12"
+           sodipodi:nodetypes="cc" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:1.62068px;font-family:'Iosevka Nerd Font';-inkscape-font-specification:'Iosevka Nerd Font Semi-Bold';letter-spacing:0px;white-space:pre;inline-size:18.2996;display:inline;fill:#ff7b01;fill-opacity:1;stroke:#0187ff;stroke-width:0.0706779;stroke-dasharray:none;stroke-opacity:1"
+         x="25.568661"
+         y="17.550241"
+         id="text12"
+         transform="translate(9.5179897)"><tspan
+           x="25.568661"
+           y="17.550241"
+           id="tspan17"><tspan
+             style="stroke:none"
+             id="tspan14">Inhalt (Content)</tspan></tspan></text>
+    </g>
+    <g
+       id="g16"
+       transform="matrix(2.4714445,0,0,-2.4714445,-5.0859134,61.620651)">
+      <g
+         id="g15"
+         style="stroke:#950134;stroke-opacity:1"
+         transform="translate(0,6.5831202)">
+        <path
+           style="fill:none;fill-opacity:1;stroke:#950134;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+           d="M 12.814123,8.5592594 V 9.7778461"
+           id="path13"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#950134;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+           d="M 21.905554,8.5592594 V 9.7778461"
+           id="path14"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#950134;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+           d="M 21.89768,9.1685528 H 12.853647"
+           id="path15"
+           sodipodi:nodetypes="cc" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:1.62068px;font-family:'Iosevka Nerd Font';-inkscape-font-specification:'Iosevka Nerd Font Semi-Bold';letter-spacing:0px;fill:#950134;fill-opacity:1;stroke:#0187ff;stroke-width:0.0706779;stroke-dasharray:none;stroke-opacity:1"
+         x="17.29801"
+         y="-18.669764"
+         id="text15"
+         transform="scale(1,-1)"><tspan
+           sodipodi:role="line"
+           id="tspan15"
+           style="text-align:center;text-anchor:middle;fill:#950134;fill-opacity:1;stroke:none;stroke-width:0.0706779"
+           x="17.29801"
+           y="-18.669764">Attribut-</tspan><tspan
+           sodipodi:role="line"
+           style="text-align:center;text-anchor:middle;fill:#950134;fill-opacity:1;stroke:none;stroke-width:0.0706779"
+           x="17.29801"
+           y="-16.643913"
+           id="tspan16">Name</tspan></text>
+    </g>
+    <g
+       id="g19"
+       transform="matrix(2.4714445,0,0,-2.4714445,22.995162,37.685245)">
+      <g
+         id="g18"
+         style="stroke:#950134;stroke-opacity:1"
+         transform="translate(0,-3.1016624)">
+        <path
+           style="fill:none;fill-opacity:1;stroke:#950134;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+           d="M 12.814123,8.5592594 V 9.7778461"
+           id="path16"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#950134;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+           d="M 21.905554,8.5592594 V 9.7778461"
+           id="path17"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#950134;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+           d="M 21.89768,9.1685528 H 12.853647"
+           id="path18"
+           sodipodi:nodetypes="cc" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:1.62068px;font-family:'Iosevka Nerd Font';-inkscape-font-specification:'Iosevka Nerd Font Semi-Bold';letter-spacing:0px;fill:#950134;fill-opacity:1;stroke:#0187ff;stroke-width:0.0706779;stroke-dasharray:none;stroke-opacity:1"
+         x="17.29801"
+         y="-8.9849806"
+         id="text19"
+         transform="scale(1,-1)"><tspan
+           sodipodi:role="line"
+           id="tspan18"
+           style="text-align:center;text-anchor:middle;fill:#950134;fill-opacity:1;stroke:none;stroke-width:0.0706779"
+           x="17.29801"
+           y="-8.9849806">Attribut-</tspan><tspan
+           sodipodi:role="line"
+           style="text-align:center;text-anchor:middle;fill:#950134;fill-opacity:1;stroke:none;stroke-width:0.0706779"
+           x="17.29801"
+           y="-6.9591308"
+           id="tspan19">Wert</tspan></text>
+    </g>
+    <g
+       id="g22"
+       transform="matrix(2.4714445,0,0,-2.4714445,-5.0859134,46.023205)">
+      <g
+         id="g21"
+         style="stroke:#950134;stroke-opacity:1"
+         transform="translate(0,6.5831202)">
+        <path
+           style="fill:none;fill-opacity:1;stroke:#950134;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+           d="M 12.814123,8.5592594 V 9.7778461"
+           id="path19"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#950134;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+           d="M 33.204467,8.5592594 V 9.7778461"
+           id="path20"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#950134;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+           d="M 33.196593,9.1685528 H 12.853647"
+           id="path21"
+           sodipodi:nodetypes="cc" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:1.62068px;font-family:'Iosevka Nerd Font';-inkscape-font-specification:'Iosevka Nerd Font Semi-Bold';letter-spacing:0px;fill:#950134;fill-opacity:1;stroke:#0187ff;stroke-width:0.0706779;stroke-dasharray:none;stroke-opacity:1"
+         x="22.899992"
+         y="-16.929033"
+         id="text22"
+         transform="scale(1,-1)"><tspan
+           sodipodi:role="line"
+           style="text-align:center;text-anchor:middle;fill:#950134;fill-opacity:1;stroke:none;stroke-width:0.0706779"
+           x="22.899992"
+           y="-16.929033"
+           id="tspan22">Attribut</tspan></text>
+    </g>
+    <g
+       id="g26"
+       transform="matrix(2.4714445,0,0,-2.4714445,-22.607254,61.620651)">
+      <g
+         id="g25"
+         style="stroke:#01ab09;stroke-opacity:1"
+         transform="translate(0,6.5831202)">
+        <path
+           style="fill:none;fill-opacity:1;stroke:#01ab09;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+           d="M 12.814123,8.5592594 V 9.7778461"
+           id="path23"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#01ab09;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+           d="M 17.031513,8.5592594 V 9.7778461"
+           id="path24"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#01ab09;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+           d="M 17.023639,9.1685528 H 12.853647"
+           id="path25"
+           sodipodi:nodetypes="cc" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:1.62068px;font-family:'Iosevka Nerd Font';-inkscape-font-specification:'Iosevka Nerd Font Semi-Bold';letter-spacing:0px;fill:#01ab09;fill-opacity:1;stroke:#0187ff;stroke-width:0.0706779;stroke-dasharray:none;stroke-opacity:1"
+         x="14.876815"
+         y="-18.669764"
+         id="text26"
+         transform="scale(1,-1)"><tspan
+           sodipodi:role="line"
+           style="text-align:center;text-anchor:middle;fill:#01ab09;fill-opacity:1;stroke:none;stroke-width:0.0706779"
+           x="14.876815"
+           y="-18.669764"
+           id="tspan26">Element-</tspan><tspan
+           sodipodi:role="line"
+           style="text-align:center;text-anchor:middle;fill:#01ab09;fill-opacity:1;stroke:none;stroke-width:0.0706779"
+           x="14.876815"
+           y="-16.643913"
+           id="tspan27">Name</tspan></text>
+    </g>
+    <g
+       id="g30"
+       transform="matrix(2.4714445,0,0,-2.4714445,146.81785,61.620651)">
+      <g
+         id="g29"
+         style="stroke:#01ab09;stroke-opacity:1"
+         transform="translate(0,6.5831202)">
+        <path
+           style="fill:none;fill-opacity:1;stroke:#01ab09;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+           d="M 12.814123,8.5592594 V 9.7778461"
+           id="path27"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#01ab09;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+           d="M 17.031513,8.5592594 V 9.7778461"
+           id="path28"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#01ab09;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+           d="M 17.023639,9.1685528 H 12.853647"
+           id="path29"
+           sodipodi:nodetypes="cc" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:1.62068px;font-family:'Iosevka Nerd Font';-inkscape-font-specification:'Iosevka Nerd Font Semi-Bold';letter-spacing:0px;fill:#01ab09;fill-opacity:1;stroke:#0187ff;stroke-width:0.0706779;stroke-dasharray:none;stroke-opacity:1"
+         x="14.876815"
+         y="-18.669764"
+         id="text30"
+         transform="scale(1,-1)"><tspan
+           sodipodi:role="line"
+           style="text-align:center;text-anchor:middle;fill:#01ab09;fill-opacity:1;stroke:none;stroke-width:0.0706779"
+           x="14.876815"
+           y="-18.669764"
+           id="tspan29">Element-</tspan><tspan
+           sodipodi:role="line"
+           style="text-align:center;text-anchor:middle;fill:#01ab09;fill-opacity:1;stroke:none;stroke-width:0.0706779"
+           x="14.876815"
+           y="-16.643913"
+           id="tspan30">Name</tspan></text>
+    </g>
+  </g>
+</svg>
