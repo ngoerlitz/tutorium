@@ -51,3 +51,7 @@ code:not(:has(span)) {
 img {
   max-width: min(760px, 100%);
 }
+
+.hidden {
+  display: none !important;
+}

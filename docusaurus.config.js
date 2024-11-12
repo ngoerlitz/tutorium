@@ -11,7 +11,7 @@ import rehypeKatex from 'rehype-katex';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Tutoriumsunterlagen',
-  tagline: 'Eine Sammlung...',
+  tagline: '',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -72,13 +72,13 @@ const config = {
     ({
       // Replace with your project's social card
       navbar: {
-        title: 'Tutoriumsunterlagen',
+        title: 'Tuutoriumsunterlagen',
         items: [
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'TODO',
+            label: 'Module',
           },
           {
             href: 'https://github.com/ngoerlitz/tutorium',
@@ -104,7 +104,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Nikolas Görlitz. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()}. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
