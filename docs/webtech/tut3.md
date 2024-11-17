@@ -188,8 +188,8 @@ div > p {
 
 ---
 
-#### Adjacent-Sibling Selector (Direkt benachbarte Geschwisterselektor)
-Der direkt benachbarte Geschwisterselektor wählt ein Element aus, welches sich direkt **nach** dem vorherigen Element befindet! _Direkt benachbart_ bedeutet in diesem Fall, dass **keine weiteren Elemente zwischen** den beiden Elementen sein dürfen und, dass beide Elemente sich **dasselbe Elternelement** teilen! 
+#### Next-Sibling Combinator (Direkt benachbarte Geschwisterselektor)
+Der direkt benachbarte Geschwisterselektor wählt das zweite Element aus, genau dann wenn es sich **direkt nach** dem ersten Element befindet! _Direkt benachbart_ bedeutet in diesem Fall, dass **keine weiteren Elemente zwischen** den beiden Elementen sein dürfen und, dass beide Elemente sich **dasselbe Elternelement** teilen! 
 
 ```html
 <div>
@@ -198,7 +198,8 @@ Der direkt benachbarte Geschwisterselektor wählt ein Element aus, welches sich 
         <p>World</p>
     </section>
 </div>
-<p>Außerhalb des Divs</p>
+<p>Außerhalb des Divs eins</p>
+<p>Außerhalb des Divs zwei</p>
 ```
 
 ```css
@@ -215,13 +216,14 @@ div + p {
         <p style={{margin: '0'}}>World</p>
     </section>
 </div>
-<p style={{color: 'blue'}}>Außerhalb des Divs</p>
+<p style={{color: 'blue'}}>Außerhalb des Divs eins</p>
+<p>Außerhalb des Divs zwei zwei</p>
 </details>
 
 ---
 
-#### General-Sibling Selector (Allgemeiner Geschwisterselektor)
-Der allgemeine Geschwisterselektor wählt, ähnlich wie der [direkt benachbarte Geschwisterselektor](#adjacent-sibling-selector-direkt-benachbarte-geschwisterselektor), ein Element aus, welches nach einem bestimmten vorherigen Element folgt, jedoch ohne die Einschränkung der dazwischenliegenden Elemente. 
+#### Subsequent-Sibling Combinator (Allgemeiner Geschwisterselektor)
+Der allgemeine Geschwisterselektor wählt **alle Elemente** aus, welche **nach** einem bestimmten vorherigen Element folgen, jedoch ohne die Einschränkung der dazwischenliegenden Elemente. 
 
 Das heißt konkret, dass es beim allg. Geschwisterselektor keine Rolle spielt, wie viele Elemente zwischen zwei auszuwählenden Elementen liegen. Die Einschränkung des gleichen Elternknotens bleibt jedoch weiterhin bestehen. 
 
@@ -234,7 +236,8 @@ Das heißt konkret, dass es beim allg. Geschwisterselektor keine Rolle spielt, w
 </div>
 <section>Eins</section>
 <section>Zwei</section>
-<p>Außerhalb des Divs</p>
+<p>Außerhalb des Divs eins</p>
+<p>Außerhalb des Divs zwei</p>
 ```
 
 ```css
@@ -253,7 +256,8 @@ div ~ p {
 </div>
 <section>Eins</section>
 <section>Zwei</section>
-<p style={{color: 'blue'}}>Außerhalb des Divs</p>
+<p style={{color: 'blue'}}>Außerhalb des Divs eins</p>
+<p style={{color: 'blue'}}>Außerhalb des Divs zwei</p>
 </details>
 
 
