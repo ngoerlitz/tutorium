@@ -5,10 +5,12 @@ tags: ["Webtechnologien", "HTML", "Einführung"]
 
 # HTML Grundlagen
 
-## HTML Element
+## Was ist HTML?
 
-HTML-Elemente sind die Grundbausteine jeder Webseite. 
-Sie strukturieren den Inhalt, liefern Semantik und bestimmen, welche Informationen im Browser dargestellt werden. 
+- **HTML** steht für **H**yper**T**ext **M**arkup **L**anguage und ist eine Markupsprache zur Erstellung von Webseiten. 
+- HTML Elemente bilden das Grundgerüst einer Webseite, bestimmen deren Inhalt, i.d.R. was dem Benutzer anzuzeigen ist, jedoch <u>nicht das Aussehen</u>. Fürs Aussehen nutzen wir stattdessen CSS! 
+
+## HTML Element
 
 Jedes HTML-Element besteht aus einem Start-Tag, optionalen Attributen, dem meist erforderlichen Inhalt und einem End-Tag. 
 Der Start-Tag markiert den Beginn des Elements und enthält den Element-Namen, wie zum Beispiel `h1` für eine Überschrift der höchsten Ebene. 
@@ -28,7 +30,7 @@ Beispielsweise bei der Einbindung eines Bildes: `<img src="..." alt="...">`.
 Die Semantik von HTML-Elementen ist ein wichtiger Bestandteil moderner Webentwicklung. 
 Sie sorgt dafür, dass HTML nicht nur zur Darstellung von Inhalten dient, sondern auch deren Bedeutung vermittelt. 
 Semantische HTML-Tags beschreiben die Funktion des Inhalts, sodass sowohl Menschen als auch Maschinen (wie Suchmaschinen oder Screenreader) den Kontext und die Struktur besser verstehen können. 
-Zum Beispiel signalisiert  `<nav>`, dass es sich um ein Navigationsmenü handelt, während `<footer>` die Fußzeile (i.d.R. mit Links z.B. aufs Impressum) darstellt.
+Zum Beispiel signalisiert  `<nav>`, dass es sich um ein Navigationsmenü handelt, während `<footer>` die Fußzeile (i.d.R. mit Links z.B. zum Impressum) darstellt.
 
 ## HTML-Einstieg
 ### Grundgerüst
@@ -52,6 +54,8 @@ Zum Beispiel signalisiert  `<nav>`, dass es sich um ein Navigationsmenü handelt
 ### Wichtige HTML Elemente
 
 #### Container (ohne semantische Bedeutung)
+Container werden typischerweise genutzt um Inhalte zu gruppieren und zu strukturieren, ohne eine semantische Bedeutung zu haben. 
+
 - `<div>`   Block Element
 - `<span>`  Inline Element
 
@@ -60,6 +64,18 @@ Zum Beispiel signalisiert  `<nav>`, dass es sich um ein Navigationsmenü handelt
     <p>Ich bin ein Absatz innerhalb eines Block-Containers.</p>
 </div>
 ```
+
+#### Container (mit semantischer Bedeutung)
+Diese funktionieren analog zu den [Containern (ohne semantische Bedeutung)](#container-ohne-semantische-bedeutung), enthalten jedoch weitere semantische Informationen zum dargestellten Inhalt. 
+
+Ein paar Beispiele:
+
+- `<article>`
+- `<aside>`
+- `<nav>`
+- `<footer>`
+
+Eine gute Übersicht findet ihr in den [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element).
 
 #### Listen
 - `<ul>` Ungeordnete Liste
@@ -97,8 +113,10 @@ Zum Beispiel signalisiert  `<nav>`, dass es sich um ein Navigationsmenü handelt
 Dieser wird bspw. genutzt, falls der Zielserver nicht erreicht werden kann oder wenn [Screenreader](https://en.wikipedia.org/wiki/Screen_reader) zum Einsatz kommen. 
 
 #### Verlinkungen
-- `<a href="...">` Clickbarer Link im Body des HTML Dokuments. Bspw. auf [isis](https://isis.tu-berlin.de).
-- `<link rel="..." href="...">` Verweis auf (externe) Ressource im `<head>`. Bspw. lassen sich so CSS-Stylesheets einbinden:
+- `<a href="...">` Clickbarer Link im Body des HTML Dokuments.
+- `<link rel="..." href="...">` Verweis auf (externe) Ressource im `<head>`. 
+
+Bspw. lassen sich so CSS-Stylesheets einbinden:
     ```html
     <head>
         [...]
