@@ -37,6 +37,7 @@ div {
 ---
 
 #### Element-Selektor
+
 Mit `#` können wir ein bestimmtes Element anhand des `id="..."` Attributs auswählen. 
 
 ```html
@@ -125,7 +126,7 @@ Deren Nutzung ist auf den ersten Blick manchmal nicht ganz offensichtlich, wesha
 In den Beispielen werden die Selektoren immer aus _Elementselektoren_ zusammengebaut. Die Funktionsweise für andere Selektoren (Klassen, ID, usw.) ist jedoch identisch. 
 
 #### Descendant Selector (Nachfahren-Selektor)
-Dieser Selektor wählt alle Elemente aus, die Nachfahren eines anderen Elements sind. Dabei ist die Tiefe der Verschachtelung egal. 
+Dieser Selektor wählt alle Elemente aus, die Nachfahren eines anderen Elements sind. Dabei ist die Tiefe der Verschachtelung egal.
 
 ```html
 <div>
@@ -216,7 +217,7 @@ div + p {
         <p style={{margin: '0'}}>World</p>
     </section>
 </div>
-<p style={{color: 'blue'}}>Außerhalb des Divs eins</p>
+<p style={{color: 'blue', margin: 0}}>Außerhalb des Divs eins</p>
 <p>Außerhalb des Divs zwei zwei</p>
 </details>
 
@@ -256,7 +257,7 @@ div ~ p {
 </div>
 <section>Eins</section>
 <section>Zwei</section>
-<p style={{color: 'blue'}}>Außerhalb des Divs eins</p>
+<p style={{color: 'blue', margin: 0}}>Außerhalb des Divs eins</p>
 <p style={{color: 'blue'}}>Außerhalb des Divs zwei</p>
 </details>
 
