@@ -3,7 +3,7 @@ title: "Tutorium 2"
 tags: ["Webtechnologien", "HTML", "JavaScript"]
 ---
 
-# Formulare & JavaScript
+# Formulare & JavaScript I
 
 Wie die Überschrift schon vermuten lässt, schauen wir uns heute die Grundlagen zu Eingabe-Formularen in HTML, sowie einige
 Basics in JavaScript an.
@@ -249,7 +249,7 @@ Radio 3: <input type="radio" style={{marginBlock: 10}} name="radio_1"></input>
 <input type="reset" value="Reset" id="" name="">
 ```
 
-## JavaScript
+## JavaScript I
 
 > JavaScript (kurz JS) ist eine Skriptsprache, die ursprünglich 1995 von Netscape für dynamisches HTML in Webbrowsern entwickelt wurde, um Benutzerinteraktionen auszuwerten, Inhalte zu verändern, nachzuladen oder zu generieren und so die Möglichkeiten von HTML zu erweitern. Heute wird JavaScript auch außerhalb von Browsern angewendet, etwa auf Servern.
 > _Quelle: https://de.wikipedia.org/wiki/JavaScript_
